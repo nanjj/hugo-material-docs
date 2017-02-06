@@ -1,0 +1,5 @@
+{{ $title := .Get "title" }}
+<div class="admonition note">
+<p class="admonition-title" id="{{ $title }}">{{ $title }}</p>
+<p>{{ printf "%s" .Inner | markdownify }}</p>
+</div>

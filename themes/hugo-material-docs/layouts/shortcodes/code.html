@@ -1,0 +1,6 @@
+{{- $src := (index .Params 0) -}}
+{{- $lang := (index .Params 1 |  default (replaceRE ".*[.]" "" $src)) -}}
+{{- $code := (printf "content/%s%s" .Page.Dir $src | readFile) -}}
+{{- highlight $code $lang "" -}}
+
+

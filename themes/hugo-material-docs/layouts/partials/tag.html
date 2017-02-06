@@ -1,0 +1,4 @@
+{{ range (slice "categories" "tags") }}
+  {{- partial "tags" (dict "Params" $.Params "Name" .) -}}
+{{ end }}
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{{  `<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->` | safeHTML }}
+{{  `<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->` | safeHTML }}
+{{  `<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->` | safeHTML }}
+{{  `<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->` | safeHTML }}
+{{  `<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->` | safeHTML }}
+<head>
+    <meta charset="utf-8">
+    <title>{{ .Title | title }}</title>
+{{- if and .IsPage (eq "remark" .Type ) -}}
+    <link rel="stylesheet" href="{{ "stylesheets/remark-fonts.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "stylesheets/remark-theme-dark.css" | relURL }}">
+<body>
+{{- else if and .IsPage (eq "swagger" .Type ) -}}
+{{- partial "swagger" . -}}
+{{- else -}}
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    {{ .Hugo.Generator }}
+    {{- with .Site.Params.description -}}
+    <meta name="description" content="{{ . }}">
+    {{- end -}}
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{- with .Site.Params.author -}}
+    <meta name="author" content="{{ . }}">
+    {{ end }}
+    <meta property="og:url" content="{{ .Permalink }}">
+    {{- with .Site.Title -}}<meta property="og:title" content="{{ . | title }}">{{- end -}}
+    {{- with .Site.Params.logo -}}<meta property="og:image" content="{{ . | relURL }}">{{- end -}}
+    {{- with .Site.Title -}}<meta name="apple-mobile-web-app-title" content="{{ . | title }}">{{- end -}}
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ with .Site.Params.favicon }}{{ . | relURL }}{{ else }}images/favicon.ico{{ end }}">
+    <link rel="icon" type="image/x-icon" href="{{ with .Site.Params.favicon }}{{ . | relURL }}{{ else }}images/favicon.ico{{ end }}">
+    <link rel="stylesheet" href="{{ "stylesheets/font-awesome.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "stylesheets/fonts.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "stylesheets/application.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "stylesheets/temporary.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "stylesheets/palettes.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "stylesheets/pygments.css" | relURL }}">
+    <script src="{{ "javascripts/modernizr.js" | relURL }}"></script>
+    {{- with .RSSLink -}}
+    <link href="{{ . }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title | title }}" />
+    <link href="{{ . }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title | title }}" />
+    {{- end -}}
+  </head>
+  <body class="{{ with .Site.Params.palette.primary }}palette-primary-{{ . }}{{end }} {{ with .Site.Params.palette.accent }}palette-accent-{{ .  }}{{ end }}">
+  {{- end -}}

@@ -1,0 +1,5 @@
+<aside class="copyright" role="note">
+  {{- with .Site.Params.copyright -}}
+  &copy; {{ $.Date.Format "2006" }} {{ . }}.
+  {{- end -}}
+</aside>

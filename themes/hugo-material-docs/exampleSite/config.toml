@@ -1,0 +1,67 @@
+baseurl = "https://pages.github.ibm.com/nanjj/"
+languageCode = "en-us"
+title = "Wall-E"
+theme = "hugo-material-docs"
+metadataformat = "yaml"
+canonifyurls = true
+pygmentsstyle = "emacs"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+pygmentsuseclasses = false
+publishdir="."
+# Enable Google Analytics by entering your tracking id
+googleAnalytics = ""
+disableRSS = true
+disableSitemap = true
+disable404 = true
+
+[params]
+	# General information
+	description = "Wall-E"
+	copyright = "Released under the MIT license"
+    repo_url = "https://github.ibm.com/nanjj/nanjj.github.ibm.com"
+	version = ""
+	logo = "images/logo.png"
+	favicon = "images/favicon.ico"
+
+	permalink = "#"
+
+    [params.palette]
+    	primary = "blue-grey"
+    	accent  = "cyan"
+
+[[menu.main]]
+    name = "Sitemap"
+    url = "sitemap/"
+    weight = 10
+
+[[menu.main]]
+	name   = "ELK Intro"
+	url    = "elk-intro/"
+	weight = 25
+
+[[menu.main]]
+	name   = "Bats Intro"
+	url    = "bats-intro/"
+	weight = 40
+
+[[menu.main]]
+	name   = "Playing Go"
+	url    = "playing-go/"
+	weight = 60
+
+[[menu.main]]
+	name   = "Hermit Crab"
+	url    = "hermit-crab/"
+	weight = 70
+
+[[menu.main]]
+	name   = "Slides"
+	url    = "tags/slides/"
+	weight = 100
+
+[blackfriday]
+	smartypants	= true
+	fractions = true
+	smartDashes = true
+	plainIDAnchors = true

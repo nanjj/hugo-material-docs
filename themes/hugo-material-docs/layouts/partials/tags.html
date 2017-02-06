@@ -1,0 +1,6 @@
+{{ if (isset .Params .Name) }}
+{{ .Name | title }}:
+{{ range index .Params .Name }}
+  <a href="{{ printf "/%s/" $.Name | relLangURL }}{{ . | urlize }}">{{ . }}</a>&nbsp;
+{{ end }}
+{{ end }}

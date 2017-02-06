@@ -1,0 +1,30 @@
+<nav aria-label="Navigation">
+  <a href="{{ "" | relURL }}" class="project">
+    <div class="banner">
+      {{- with .Site.Params.logo -}}
+        <div class="logo">
+          <img src="{{ . | relURL }}">
+        </div>
+      {{- end -}}
+      <div class="name">
+        <strong>{{ .Site.Title | title }} {{ with .Site.Params.version }}<span class="version">{{ . }}</span>{{ end }}</strong>
+        {{ with .Scratch.Get "repo_id" }}
+          <br>
+          {{- . -}}
+        {{- end -}}
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      <div class="toc">
+        {{- if gt (len .Site.Menus.main) 0 -}}
+        <ul>
+          {{- partial "nav" . -}}
+        </ul>
+        {{- end -}}
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,51 @@
+{{- $page := index (where .Data.Pages "RelPermalink" "==" .RelPermalink) 0 -}}
+{{- $page | default . | partial "head" -}}
+{{- if and $page (eq "remark" $page.Type) -}}
+{{- partial "rawcontent" $page -}}
+{{- else if and $page (eq "swagger" $page.Type) -}}
+{{- partial "body_swagger" $page -}}
+{{- else -}}
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	{{- $page | default . | partial "header" -}}
+</header>
+
+<main class="main">
+	<div class="drawer">
+		{{- partial "drawer" . -}}
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+{{- if $page -}}
+<h1>{{- $page.Title | title -}}</h1>
+{{- partial "tag" $page -}}
+{{- $page.Content -}}
+<footer class="footer">
+  {{- partial "footer" $page -}}
+</footer>
+{{- else -}}
+<h1>Pages in {{ .Title | title }}</h1>
+{{- partial "items" .Data.Pages -}}
+{{- end -}}
+{{- partial "copyright" . -}}
+		</div>
+	</article>
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+{{- end -}}
+{{- partial "foot" . -}}
