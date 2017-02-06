@@ -1,0 +1,42 @@
+baseurl = "https://pages.github.ibm.com/nanjj/hugo-material-docs"
+languageCode = "en-us"
+title = "hugo-material-docs"
+theme = "hugo-material-docs"
+metadataformat = "yaml"
+canonifyurls = true
+pygmentsstyle = "emacs"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+pygmentsuseclasses = false
+publishdir="."
+# Enable Google Analytics by entering your tracking id
+googleAnalytics = ""
+disableRSS = true
+disableSitemap = true
+disable404 = true
+
+[params]
+	# General information
+	description = "Wall-E"
+	copyright = "Released under the MIT license"
+    repo_url = "https://github.ibm.com/nanjj/hugo-material-docs"
+	version = ""
+	logo = "images/logo.png"
+	favicon = "images/favicon.ico"
+
+	permalink = "#"
+
+    [params.palette]
+    	primary = "blue-grey"
+    	accent  = "cyan"
+
+[[menu.main]]
+    name = "Sitemap"
+    url = "sitemap/"
+    weight = 10
+
+[blackfriday]
+	smartypants	= true
+	fractions = true
+	smartDashes = true
+	plainIDAnchors = true

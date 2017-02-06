@@ -1,0 +1,9 @@
+dist: trusty
+language: go
+before_install:
+  - go get github.com/spf13/hugo; go get github.com/kardianos/govendor; (cd $GOPATH/src/github.com/spf13/hugo; govendor sync; go install)
+  - sudo pip install pygments
+  - hugo version
+  - pygmentize -V
+script:
+  - bats *.bats
