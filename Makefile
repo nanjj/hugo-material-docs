@@ -1,6 +1,6 @@
 all: build
 
-build: config.toml themes
+build: config.toml themes migrate
 	mkdir -p static content
 	hugo
 	git add .
