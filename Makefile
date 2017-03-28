@@ -9,6 +9,9 @@ clean:
 	rm -rf fonts images javascripts stylesheets index.html index.xml
 	find . -type f -name index.html -exec dirname {} \; | cut -d/ -f2 | sort -u| grep -v '\.' | grep -v "themes" | xargs rm -rf
 
+migrate:
+	find content -type f -name index.md | while read line; do mv $$line $$(dirname $$line)/_index.md; done
+
 config.toml:
 	cp themes/hugo-material-docs/exampleSite/config.toml config.toml
 
