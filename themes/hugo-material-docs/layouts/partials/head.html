@@ -7,11 +7,11 @@
 <head>
     <meta charset="utf-8">
     <title>{{ .Title | title }}</title>
-{{- if and .IsPage (eq "remark" .Type ) -}}
+{{- if and (eq "remark" .Type ) -}}
     <link rel="stylesheet" href="{{ "stylesheets/remark-fonts.css" | relURL }}">
     <link rel="stylesheet" href="{{ "stylesheets/remark-theme-dark.css" | relURL }}">
 <body>
-{{- else if and .IsPage (eq "swagger" .Type ) -}}
+{{- else if (eq "swagger" .Type ) -}}
 {{- partial "swagger" . -}}
 {{- else -}}
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
