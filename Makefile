@@ -18,7 +18,7 @@ config.toml:
 themes:
 	git remote | grep nanjj || git remote add nanjj "https://github.ibm.com/nanjj/hugo-material-docs"
 	git fetch nanjj master
-	git checkout nanjj/master -- themes Makefile hugo.bats .travis.yml content/sitemap.md
+	git checkout nanjj/master -- themes Makefile hugo.bats .travis.yml content/sitemap.md .nojekyll
 
 check:
 	bash ./check.bash
