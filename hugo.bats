@@ -2,6 +2,9 @@
 @test "Make and Push" {
     eval `git log -n1 --pretty='author="%an <%ae>"'`
     hugo
+    if [ $(git branch --list master | wc -l) -eq 0 ]; then
+        return
+    fi
     git reset --hard
     git checkout master
     git pull
