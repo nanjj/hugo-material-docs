@@ -78,6 +78,7 @@ add a download and star button, and display the number of stars:
   # Repository
   provider = "GitHub"
   repo_url = "https://github.com/digitalcraftsman/hugo-material-docs"
+  repo_branch = "master"
 ```
 
 ### Adding a version

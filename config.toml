@@ -18,6 +18,7 @@ disableKinds = ["404", "RSS", "sitemap"]
 	description = "Wall-E"
 	copyright = "Released under the MIT license"
     repo_url = "https://github.ibm.com/nanjj/hugo-material-docs"
+    repo_branch = "master"
 	version = ""
 	logo = "images/logo.png"
 	favicon = "images/favicon.ico"
