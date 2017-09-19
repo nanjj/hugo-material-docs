@@ -1,18 +1,58 @@
-name = "Material Docs"
-license = "MIT"
-licenselink = "https://github.com/digitalcraftsman/hugo-material-docs/blob/master/LICENSE.md"
-description = "A material design theme for documentations."
-homepage = "https://github.com/digitalcraftsman/hugo-material-docs"
-tags = ["material", "documentation", "docs", "google analytics", "responsive"]
-features = ["", ""]
-min_version = 0.15
+baseurl = "https://pages.github.ibm.com/nanjj/go"
+languageCode = "en-us"
+title = "Go Learning"
+theme = "hugo-material-docs"
+metadataformat = "yaml"
+canonifyurls = true
+pygmentsstyle = "emacs"
+pygmentscodefences = true
+publishdir="."
+# Enable Google Analytics by entering your tracking id
+googleAnalytics = ""
+disableKinds=["404","RSS","sitemap"]
 
-[author]
-  name = "Digitalcraftsman"
-  homepage = "https://github.com/digitalcraftsman"
+[params]
+	# General information
+	description = "Genesis Learning"
+	copyright = "Released under the MIT license"
 
-# If porting an existing theme
-[original]
-  name = "Martin Donath"
-  homepage = "http://struct.cc/"
-  repo = "https://github.com/squidfunk/mkdocs-material"
+	# Repository
+	repo_url = "https://github.ibm.com/nanjj/go"
+    repo_branch = "gh-pages"
+	logo = "images/logo.png"
+	favicon = "images/favicon.png"
+
+	permalink = "#"
+
+	# Custom assets
+	custom_css = []
+	custom_js  = []
+
+	# Syntax highlighting theme
+	highlight_css  = ""
+
+	[params.palette]
+    	primary = "blue-grey"
+    	accent  = "teal"
+
+    [params.font]
+    	text = "Roboto"
+    	code = "Roboto Mono"
+
+
+[social]
+	twitter = ""
+	github  = ""
+	email   = "nanjj@cn.ibm.com"
+
+
+[[menu.main]]
+	name   = "Go"
+	url    = "/"
+	weight = 10
+
+[blackfriday]
+	smartypants	= true
+	fractions = true
+	smartDashes = true
+	plainIDAnchors = true
