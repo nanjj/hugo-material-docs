@@ -11,7 +11,10 @@ pygmentsuseclasses = false
 publishdir="."
 # Enable Google Analytics by entering your tracking id
 googleAnalytics = ""
-disableKinds=["404", "RSS", "sitemap"]
+disableRSS = true
+disableSitemap = true
+disable404 = true
+
 [params]
 	# General information
 	description = "Wall-E"

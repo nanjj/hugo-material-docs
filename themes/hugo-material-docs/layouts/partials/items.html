@@ -1,4 +1,4 @@
 {{- range where . "Type" "not in" (slice "page") -}}
-<br>{{ .Date.Format "2006-01-02" }}  <a class="name" title="Edit" href="{{.Site.Params.repo_url}}/edit/{{.Site.Params.repo_branch}}/content/{{.File.Path}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+<br>{{ .Date.Format "2006-01-02" }}  <a class="name" title="Edit" href="{{.Site.Params.repo_url}}/edit/{{.Site.Params.repo_branch}}/content/{{ with .File }}{{ .Path }}{{ end }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 </a>  <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title | title }}</a>
 {{ end }}

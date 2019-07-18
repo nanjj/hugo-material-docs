@@ -1,2 +1,2 @@
-<div class="project" style="float:right;"><a class="name" href="{{.Site.Params.repo_url}}/edit/{{.Site.Params.repo_branch}}/content/{{.File.Path}}"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
+<div class="project" style="float:right;"><a class="name" href="{{.Site.Params.repo_url}}/edit/{{.Site.Params.repo_branch}}/content/{{ with .File }}{{ .Path }}{{ end }}"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
 </a></div>
