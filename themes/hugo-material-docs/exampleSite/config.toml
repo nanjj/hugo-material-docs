@@ -1,4 +1,4 @@
-baseurl = "https://pages.github.ibm.com/nanjj/"
+baseurl = "https://nanjj.github.io"
 languageCode = "en-us"
 title = "Wall-E"
 theme = "hugo-material-docs"
@@ -19,7 +19,7 @@ disable404 = true
 	# General information
 	description = "Wall-E"
 	copyright = "Released under the MIT license"
-    repo_url = "https://github.ibm.com/nanjj/nanjj.github.ibm.com"
+    repo_url = "https://github.com/nanjj/nanjj.github.com"
 	version = ""
 	logo = "images/logo.png"
 	favicon = "images/favicon.ico"

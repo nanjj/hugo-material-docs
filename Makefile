@@ -16,7 +16,7 @@ config.toml:
 	cp themes/hugo-material-docs/exampleSite/config.toml config.toml
 
 themes:
-	git remote | grep nanjj || git remote add nanjj "https://github.ibm.com/nanjj/hugo-material-docs"
+	git remote | grep nanjj || git remote add nanjj "https://github.com/nanjj/hugo-material-docs"
 	git fetch nanjj master
 	git checkout nanjj/master -- themes Makefile hugo.bats .travis.yml content/sitemap.md .nojekyll
 
